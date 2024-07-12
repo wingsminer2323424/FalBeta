@@ -2,19 +2,19 @@ getgenv().Evolution = {
     ["Options"] = {
         ["Version"] = "3.1.4-Electron", -- // Dont touch this is to make sure your using the correct table
         ["Stealth Mode"] = {
-            ["Enabled"] = true, -- // Will hide the loader and just load the script 
+            ["Enabled"] = false, -- // Will hide the loader and just load the script 
             ["Key"] = "", -- // Enter your Evolution Key
         },
         ["Internal"] = {
             ["Enabled"] = true, -- // Shows internal ui for evolution
-            ["Auto Show"] = true, -- // Will show the ui when you execute
+            ["Auto Show"] = false, -- // Will show the ui when you execute
             ["Bind"] = "V", -- // Default keybind to toggle ui
         },
         ["FPS Unlocker"] = { -- // Unlocks your fps (BROKEN ON ELECTRON)
             ["Enabled"] = true, -- // Will unlock your FPS
             ["FPS"] = 999, -- // Maximum FPS
         },
-        ["Intro"] = false, -- // Will show a short intro
+        ["Intro"] = true, -- // Will show a short intro
         ["Stats"] = false, -- // Shows debug stats (BROKEN ON ELECTRON)
         ["Auto Join Discord"] = false, -- // Will Join Discord
         ["Allow Notifications"] = false, -- // Toggles all notifications
@@ -22,7 +22,7 @@ getgenv().Evolution = {
         ["Notifcation Duration"] = 3, -- // How long notifcations will show
     },
     ["Silent Aim"] = {
-        ["Enabled"] = true, -- // Mouse Redirection
+        ["Enabled"] = false, -- // Mouse Redirection
         ["Mode"] = "FOV", -- // Select mode to select target (FOV, Target )
         ["Target Mode Bind"] = "Q", -- // Keybind for Target mode
         ["Notify"] = true, -- // Sends notifcation when targeting someone
@@ -266,7 +266,7 @@ getgenv().Evolution = {
 }
 
 
--- // Evolution V3
+-- // fal
 
 
 --[[if Evolution.Options["FPS Unlocker"].Enabled then 
@@ -686,7 +686,7 @@ if Evolution["Options"]["Intro"] then
     Image.BackgroundTransparency = 1
     Image.Position = UDim2.new(0, newx, 0, newy)
     Image.Size = UDim2.new(0, 100, 0, 100)
-    Image.Image = "rbxassetid://14270853092"
+    Image.Image = "rbxassetid://8264712734"
     Image.ImageTransparency = 1
     Image.AnchorPoint = Vector2.new(0.5,0.5)
 
@@ -2606,7 +2606,7 @@ if Evolution["Options"]["Internal"].Enabled then
         local Aiming = Tabs.Main:AddLeftTabbox('Aiming')
         
         -- // Silent Aim Tab Box
-        local SilentAimTab = Aiming:AddTab('Silent Aim')
+        local SilentAimTab = Aiming:AddTab('Legit Aim')
         
         SilentAimTab:AddToggle('SilentAim/Enabled', {
             Text = 'Enabled',
@@ -2823,7 +2823,7 @@ if Evolution["Options"]["Internal"].Enabled then
         });
         
         -- // Cam Lock Tab Box
-        local CamLockTab = Aiming:AddTab('Cam Lock')
+        local CamLockTab = Aiming:AddTab('Rage Aim')
         
         CamLockTab:AddToggle('CamLock/Enabled', {
             Text = 'Enabled',
@@ -4033,6 +4033,7 @@ if Evolution["Options"]["Internal"].Enabled then
             Text = 'Box',
             Default = Evolution["ESP"].Box.Enabled , 
             Callback = function(Value)
+                            
                 Evolution["ESP"].Box.Enabled = Value
             end
         }):AddColorPicker('BoxColor', {
